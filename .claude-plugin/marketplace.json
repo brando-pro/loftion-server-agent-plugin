@@ -1,0 +1,15 @@
+{
+  "name": "loftion",
+  "description": "LOFTION plugins for Claude Code",
+  "owner": { "name": "LOFTION", "url": "https://agent.loftion.com" },
+  "plugins": [
+    {
+      "name": "loftion-server-agent",
+      "source": "./",
+      "description": "Your servers and their security findings inside Claude Code: per-project API key, MCP tools, /triage and /host commands.",
+      "version": "0.1.0",
+      "category": "devops",
+      "tags": ["monitoring", "security", "servers", "mcp"]
+    }
+  ]
+}

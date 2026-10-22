@@ -1,0 +1,17 @@
+{
+  "name": "loftion-server-agent",
+  "version": "0.1.0",
+  "description": "Your servers and their security findings inside Claude Code: per-project API key, MCP tools, triage and host commands. Agent reads only; fixes are yours over ssh.",
+  "author": { "name": "LOFTION", "url": "https://agent.loftion.com" },
+  "homepage": "https://agent.loftion.com",
+  "repository": "https://github.com/brando-pro/loftion-server-agent-plugin",
+  "license": "MIT",
+  "keywords": ["monitoring", "security", "servers", "mcp", "linux"],
+  "mcpServers": {
+    "loftion-server-agent": {
+      "command": "node",
+      "args": ["${CLAUDE_PLUGIN_ROOT}/bin/mcp-proxy.mjs"],
+      "env": { "CLAUDE_PROJECT_DIR": "${CLAUDE_PROJECT_DIR}" }
+    }
+  }
+}
