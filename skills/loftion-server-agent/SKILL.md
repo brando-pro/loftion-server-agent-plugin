@@ -18,7 +18,7 @@ Severities: critical pages the owner immediately; high and medium go into the da
 
 ## Closing findings honestly
 
-- Metric findings (CPU, disk, services down, failed units, checks) resolve **by themselves** about a minute after the cause is gone. Scan findings (packages, CVEs, EOL) resolve after the next nightly scan, or right away if someone runs `loftion-agent scan-now` on the host.
+- Metric findings (CPU, disk, services down, failed units, checks) resolve **by themselves** about a minute after the cause is gone. Scan findings (packages, CVEs, EOL) resolve after the next nightly scan, or sooner with `run_scan {host}` (read-only, takes a few minutes).
 - `update_finding` actions: `ack` = seen, keep open, stop alerting; `snooze {days}` = hide for a while; `false-positive` = tell the team it is wrong; `resolve` = you fixed it, close now (if the next scan still sees the problem a new finding opens); `reopen`. Several at once: `update_findings {ids, action, note}`.
 - Always pass a `note` saying what you did or why. Notes show up in the panel and in Telegram for the whole team.
 - Do not mark `resolve` on something you did not fix or verify. "I ran apt upgrade on the host" is a reason; "looks old" is not.
